@@ -3,7 +3,7 @@
 #%% Generate a signal and compute its FFT
 import numpy as np
 import matplotlib.pyplot as plt
-import polar
+import polar.signal
 
 t = np.arange(101)*.5 # time vector
 x = np.arange(51)*.5 # spatial coordinates

@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <title>2D ESPRIT ANALYSIS</title>
+    <meta charset="utf-8">
+
+    <!-- INCLUDE PYSCRIPT -->
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  </head>
+
+  <body>
+
+    <py-config>
+      packages = [
+        "matplotlib", 
+        "../../dist/polar-0.0.1-py3-none-any.whl",
+        ]
+    </py-config>
+    
+    <div id="mpl"></div>
+    <py-script src="./esprit.py">
+
+  </body>
+
+</html>

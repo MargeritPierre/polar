@@ -1,0 +1,35 @@
+# TOML document for building the POLAR packages
+# py -m build
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "polar"
+version = "0.0.1"
+authors = [
+  { name="Pierre Margerit", email="pierre.margerit@cnrs.fr" },
+]
+description = "A suite of signal pole estimation algorithms"
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "xarray",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["polar*"]  # alternatively: `exclude = ["additional*"]`
+namespaces = false
+
+[project.urls]
+"Homepage" = "https://github.com/MargeritPierre/polar"
+"Bug Tracker" = "https://github.com/MargeritPierre/polar/issues"
