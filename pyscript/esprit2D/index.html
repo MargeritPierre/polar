@@ -10,6 +10,22 @@
 
   <body>
 
+    <fieldset>
+
+      <legend>Signal Parameters</legend>
+
+      <div>
+        <label for="signal_order">Signal Order</label>
+        <input id="signal_order" type="range" min="1" max="20" step="1" value="10">
+        <label for="signal_order">10</label>
+      </div>
+
+      <div>
+        <button id="generate" type="button"> Generate </button>
+      </div>
+
+    </fieldset>
+
     <py-config>
       packages = [
         "matplotlib", 
