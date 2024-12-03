@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>2D ESPRIT ANALYSIS</title>
+    <title>Spectral Analyser</title>
     <meta charset="utf-8">
 
     <!-- INCLUDE PYSCRIPT -->
@@ -9,24 +9,30 @@
   </head>
 
   <body>
-
+    <!-- UI -->
     <fieldset>
 
-      <legend>Signal Parameters</legend>
+      <legend>Parameters</legend>
 
       <div>
-        <label for="signal_order">Signal Order</label>
-        <input id="signal_order" type="range" min="1" max="20" step="1" value="10">
-        <label for="signal_order">10</label>
+        <label for="buffer_length">Buffer Length</label>
+        <input id="buffer_length" type="range" min="1" max="20" step="1" value="10">
+        <label for="buffer_length">10</label>
       </div>
 
       <div>
-        <button id="generate" type="button"> Generate </button>
+        <button id="start" type="button"> Start </button>
       </div>
 
     </fieldset>
 
+    <!-- JAVASCRIPT -->
+    <audio id="player" controls></audio>
+    <script src="./main.js"></script>
+
+    <!-- PYTHON -->
     <py-config>
+      terminal = false
       packages = [
         "matplotlib", 
         "../../dist/polar-0.0.1-py3-none-any.whl",
@@ -35,7 +41,7 @@
     
     <div id="mpl"></div>
     
-    <py-script src="./esprit.py">
+    <py-script src="./main.py">
 
   </body>
 

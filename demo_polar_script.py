@@ -42,7 +42,7 @@ print("iH:\n",iH)
 import polar
 import numpy as np
 
-L = 10
+L = 1024
 k = np.pi/5
 x = np.arange(L)
 s = np.exp(1j*k*x)

@@ -5,14 +5,13 @@ import polar
 import numpy as np
 #
 import matplotlib
-#matplotlib.use("module://matplotlib_pyodide.html5_canvas_backend")
 import matplotlib.pyplot as plt
 #
 from pyodide.ffi import create_proxy
 import js
 
 # The signal grid
-L = np.array([4,6])*5
+L = np.array([4,6])*8
 xi = [np.arange(l) for l in L]
 x = np.hstack([xi.flatten()[:,None] for xi in np.meshgrid(*xi, indexing='ij')])
 dims = ["x"+ str(ax) for ax in range(L.size)] 
@@ -67,7 +66,7 @@ def update():
     # apply ESPRIT
     esp = polar.esprit.esprit(np.array(s),R=R)
     ke = esp.k[-1]
-    # display
+    # update plot data
     srf_s.set_array(normalize(np.array(np.real(s))))
     srf_fft.set_array(normalize(np.array(np.abs(F))))
     plK.set_xdata(k[:,1]/2/np.pi)

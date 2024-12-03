@@ -69,7 +69,7 @@ class Esprit():
             # Covariance
             Css = H @ H.H
             # Signal subspace
-            self.sigma, self.W = np.linalg.eigh(Css)
+            self.sigma, self.W = sp.linalg.eigh(Css)
             # Sort the eigenvectors
             idx = np.argsort(np.abs(self.sigma))[::-1]
             Rmax = np.max(self.R)
